@@ -38,7 +38,7 @@ namespace TestiSofta.Droid
         }
         //public async Task<List<GetData>> GetAllData()
         //{ 
-        //    return (await dBFirebase.Child) Jatka tästä Dorka vittu kulli kello on kaks vittu
+        //    return (await dBFirebase.Child) Jatka tästä Dorka vittu kulli kello on kaks vittu https://www.c-sharpcorner.com/article/xamarin-forms-working-with-firebase-realtime-database-crud-operations/
 
         //}
 
