@@ -21,6 +21,7 @@ namespace TestiSofta
         private void BtnUpdate_Clicked(object sender, EventArgs e)
         {
             
+            //EditBoxi.Text = string.Copy(EditBoxi.Text);
         }
 
         private void BtnDelete_Clicked(object sender, EventArgs e)
