@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "627323334413",
+    "firebase_url": "https://temperatureproject-666.firebaseio.com",
+    "project_id": "temperatureproject-666",
+    "storage_bucket": "temperatureproject-666.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627323334413:android:ae99cec324686b3b228a44",
+        "android_client_info": {
+          "package_name": "com.sakuk.TestiSofta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627323334413-0gkfke7v059b0q22offfcps0l10sl7ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBNm9kA7zszEwzuJ864tRElPnVT4Kc99w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627323334413-0gkfke7v059b0q22offfcps0l10sl7ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

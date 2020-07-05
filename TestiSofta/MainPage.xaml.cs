@@ -17,5 +17,15 @@ namespace TestiSofta
         {
             InitializeComponent();
         }
+
+        private void BtnUpdate_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtnDelete_Clicked(object sender, EventArgs e)
+        {
+            EditBoxi.Text = string.Empty;
+        }
     }
 }
