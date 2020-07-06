@@ -8,6 +8,17 @@ using Xamarin.Forms;
 using Firebase.Database;
 using Firebase.Database.Query;
 using TestiSofta.Droid;
+using Newtonsoft.Json;
+
+/*  linkkei
+     https://www.c-sharpcorner.com/article/xamarin-forms-working-with-firebase-realtime-database-crud-operations/
+     https://console.firebase.google.com/u/0/project/temperatureproject-666/database/temperatureproject-666/data
+     https://stackoverflow.com/questions/34335114/derserialize-json-object-from-firebase-in-c-sharp
+     https://github.com/susairajs/Xamarin-Firebase-RealtimeDatabase/tree/master/XamarinFirebase
+     https://github.com/susairajs/Xamarin-Firebase-RealtimeDatabase/blob/master/XamarinFirebase/XamarinFirebase/Model/Person.cs
+     https://github.com/susairajs/Xamarin-Firebase-RealtimeDatabase/blob/master/XamarinFirebase/XamarinFirebase/MainPage.xaml.cs
+     https://github.com/susairajs/Xamarin-Firebase-RealtimeDatabase/blob/master/XamarinFirebase/XamarinFirebase/Helper/FirebaseHelper.cs
+*/
 
 namespace TestiSofta
 {
@@ -17,7 +28,8 @@ namespace TestiSofta
     public partial class MainPage : ContentPage
     {
  
-        readonly AppDataHelper appDataHelper = new AppDataHelper();
+        
+        AppDataHelper appDataHelper = new AppDataHelper();
 
 
         public MainPage()
@@ -43,8 +55,21 @@ namespace TestiSofta
         //    EditBoxi.Text = string.Empty;
         //}
 
-        private void BtnData_Clicked(object sender, EventArgs e)
+        private async void BtnData_Clicked(object sender, EventArgs e)
         {
+            var gettaaData = await appDataHelper.GetTempHum(txtTemp.Text, txtHum.Text); //GetTempHum(Convert.ToInt32(txtTemp), Convert.ToInt32(txtHum));
+            if (gettaaData != null)
+            {
+                txtTemp.Text = gettaaData.Temp.ToString();
+
+                txtHum.Text = gettaaData.Hum.ToString();
+
+                await DisplayAlert("Success", "Retrive data Successfully", "OK"); // Call it a day, JSON lukemista ja katsoa Raspberry Pi:n koodia
+            }
+            else
+            {
+                await DisplayAlert("Success", "Not good", "OK");
+            }
             //var temp = await appDataHelper.GetData(LblText1.Text);
         }
 

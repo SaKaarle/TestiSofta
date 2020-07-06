@@ -31,8 +31,8 @@ namespace TestiSofta.Droid
         {
             var allData = await GetAllData();
             await firebaseDB.Child("DHT").OnceAsync<GetData>();
-            return allData.Where(a => a.Temp == temp).Where(b => b.Hum == hum).FirstOrDefault();// .FirstOrDefault();
-
+            return allData.Where(a => a.Temp == temp)/*.Where(b => b.Hum == hum).FirstOrDefault();// */ .FirstOrDefault();
+            
         }
         //public async Task<List<GetData>> GetAllData()
         //{ 
