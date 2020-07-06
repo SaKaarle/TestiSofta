@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
-
+using Firebase.Database;
+using Firebase.Database.Query;
+using TestiSofta.Droid;
 
 namespace TestiSofta
 {
@@ -15,11 +16,20 @@ namespace TestiSofta
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+ 
+        readonly AppDataHelper appDataHelper = new AppDataHelper();
 
-        //readonly AppDataHelper appDataHelper = new AppDataHelper();
+
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            var allData = await appDataHelper.GetAllData();
+            lstTempData.ItemsSource = allData;
         }
 
         //private void BtnUpdate_Clicked(object sender, EventArgs e)
@@ -35,7 +45,7 @@ namespace TestiSofta
 
         private void BtnData_Clicked(object sender, EventArgs e)
         {
-            //var temp = await AppDataHelper.GetData(LblText1.Text);
+            //var temp = await appDataHelper.GetData(LblText1.Text);
         }
 
         private void BtnTemp_Clicked(object sender, EventArgs e)

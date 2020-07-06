@@ -11,7 +11,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height=".5*"/>
             <RowDefinition Height=".25*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         
         <Grid.ColumnDefinitions>
@@ -26,9 +27,17 @@
         <Editor x:Name="EditBoxi" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Placeholder="yes"/>
         <Button x:Name="BtnTemp" Clicked="BtnTemp_Clicked" Text="Temp" Grid.Row="2" Grid.Column="0" />
         <Button x:Name="BtnData" Clicked="BtnData_Clicked" Text="Show Data" Grid.Row="2" Grid.Column="3" />
+
+        
         <Label Text="mis mu momo?" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="3"/>
         <Label x:Name="LblText1" Text="" FontSize="Large" FontAttributes="Bold" Grid.Column="2" Grid.Row="3"/>
-
+        <ListView Grid.Row="4" Grid.ColumnSpan="4" x:Name="lstTempData">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                      <TextCell Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 
    

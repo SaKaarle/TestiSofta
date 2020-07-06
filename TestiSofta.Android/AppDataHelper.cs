@@ -11,11 +11,13 @@ using Android.Views;
 using Android.Widget;
 using Firebase;
 using Firebase.Database;
+using FirebaseOptions = Firebase.FirebaseOptions;
 
-namespace TestiSofta.Droid
+namespace TestiSofta.Droid 
 {
     public class AppDataHelper
     {
+        readonly FirebaseClient firebaseDB = new FirebaseClient("https://temperatureproject-666.firebaseio.com/");
         public static FirebaseDatabase GetDatabase()
         {
             var app = FirebaseApp.InitializeApp(Application.Context);
