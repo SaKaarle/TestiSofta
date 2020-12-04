@@ -41,7 +41,7 @@ namespace TestiSofta
         {
             base.OnAppearing();
             var allData = await appDataHelper.GetAllData();
-            lstTempData.ItemsSource = allData;
+            //lstTempData.ItemsSource = allData;
         }
 
         //private void BtnUpdate_Clicked(object sender, EventArgs e)
@@ -57,13 +57,11 @@ namespace TestiSofta
 
         private async void BtnData_Clicked(object sender, EventArgs e)
         {
-            var gettaaData = await appDataHelper.GetTempHum(txtTemp.Text, txtHum.Text); //GetTempHum(Convert.ToInt32(txtTemp), Convert.ToInt32(txtHum));
+            var gettaaData = await appDataHelper.GetTemp(txtTemp.Text); //GetTempHum(Convert.ToInt32(txtTemp), Convert.ToInt32(txtHum));
             if (gettaaData != null)
             {
-                txtTemp.Text = gettaaData.Temp.ToString();
-
-                txtHum.Text = gettaaData.Hum.ToString();
-
+                lstTempData.ItemsSource = gettaaData.Temp.ToString();
+                //txtHum.Text = gettaaData.Hum.ToString();
                 await DisplayAlert("Success", "Retrive data Successfully", "OK"); // Call it a day, JSON lukemista ja katsoa Raspberry Pi:n koodia
             }
             else
